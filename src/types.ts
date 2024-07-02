@@ -6,6 +6,12 @@ export enum Key {
   WHOLE_STEP = "Whole Step Down",
 }
 
+export type Keys = {
+  actual: Key;
+  transposed?: Key;
+  user?: Key;
+};
+
 export enum MemberName {
   CHRIS = "Chris",
   JUSTIN = "Justin",
@@ -43,9 +49,8 @@ export type Setlist = Map<string, Set[]>;
 
 export type SongMeta = {
   id: string;
-  key: Key;
+  key: Keys | Key;
   title: string;
-  userKey: Key;
   vocals: BandMember["name"][];
 };
 
